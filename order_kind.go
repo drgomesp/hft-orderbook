@@ -1,13 +1,13 @@
 package main
 
-type Kind byte
+type OrderKind byte
 
 const (
-	Sell Kind = iota
+	Sell OrderKind = iota
 	Buy
 )
 
-func (s Kind) String() string {
+func (s OrderKind) String() string {
 	if s == Buy {
 		return "buy"
 	}

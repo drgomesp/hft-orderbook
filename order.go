@@ -1,19 +1,19 @@
 package main
 
 import (
-	"time"
 	"github.com/shopspring/decimal"
+	"time"
 )
 
 type Order struct {
-	Side   Kind            `json:"side"`
+	Side   OrderKind       `json:"side"`
 	Id     string          `json:"id"`
 	Time   time.Time       `json:"time"`
-	Volume decimal.Decimal `json:"volume"`
 	Price  decimal.Decimal `json:"price"`
+	Volume decimal.Decimal `json:"volume"`
 }
 
-func NewOrder(id string, side Kind, volume, price decimal.Decimal) interface{} {
+func NewOrder(id string, side OrderKind, volume, price decimal.Decimal) interface{} {
 	return &Order{
 		Side:   side,
 		Id:     id,

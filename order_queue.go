@@ -18,3 +18,11 @@ func NewOrderQueue(price decimal.Decimal) *OrderQueue {
 		orders: list.New(),
 	}
 }
+
+func (o *OrderQueue) Price() decimal.Decimal {
+	return o.price
+}
+
+func (o *OrderQueue) Volume() decimal.Decimal {
+	return o.volume
+}
