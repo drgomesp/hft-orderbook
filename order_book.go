@@ -137,7 +137,7 @@ func (b *OrderBook) MatchOrders() (trades []*Trade, err error) {
 					asks.Update(askEl, partial)
 				}
 
-				trades = append(trades, NewTrade(bid, ask, volume, bid.Price))
+				trades = append(trades, NewTrade(bid, ask, volume, ask.Price))
 			}
 		}
 	}

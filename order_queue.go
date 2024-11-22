@@ -49,8 +49,7 @@ func (q *OrderQueue) Len() int {
 }
 
 func (q *OrderQueue) Update(e *list.Element, partial *Order) *list.Element {
-	q.volume = q.volume.Sub(e.Value.(*Order).Volume)
-	q.volume = q.volume.Add(partial.RemainingVolume)
+	q.volume = partial.RemainingVolume
 	e.Value = partial
 
 	return e
